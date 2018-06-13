@@ -1,0 +1,15 @@
+
+#container{
+	border: 5px solid black;
+	width: 400px;
+	height: 400px;		
+	margin: 0 auto;
+}
+input{
+	margin-left: 20px;
+	display: block;
+}
+#message{
+	width: 400px;
+	height: 100px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+	<div id="container">
+		<h1>Registration Form Validator</h1>
+		<form action="/process" method="post">
+			Email:<input type="text" name="email">
+			First Name:<input type="text" name="first_name">
+			Last Name:<input type="text" name="last_name">
+			Password:<input type="password" name="password">
+			Confirm Password:<input type="password" name="cfrm_password">
+			<input type="submit" name="submit" value="Submit">
+			<input type="submit" name="logout" value="Logout">
+		</form>
+		<div id="message">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				  {% if messages %}
+				    <ul class=flashes>
+				    {% for category, message in messages %}
+				      <li class="{{ category }}">{{ message }}</li>
+				    {% endfor %}
+				    </ul>
+				  {% endif %}
+				{% endwith %}
+			</div>
+	</div>
+
+</body>
+</html>
