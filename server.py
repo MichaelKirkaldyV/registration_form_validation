@@ -20,7 +20,7 @@ def validate():
 	session['cfrm_password'] = request.form['cfrm_password']
 
 	#tests email
-	if len(session['email']) < 1 and EMAIL_REGEX.match(request.form['email']):
+	if len(session['email']) > 0 and EMAIL_REGEX.match(request.form['email']):
 		flash("Welcome!", 'success')
 	else:
 		flash("Email is invalid", 'error')

@@ -16,11 +16,15 @@
 			<input type="submit" name="submit" value="Submit">
 			<input type="submit" name="logout" value="Logout">
 		</form>
+		<!-- Shows under form !-->
 		<div id="message">
+													<!-- sets categories to true !-->
 				{% with messages = get_flashed_messages(with_categories=true) %}
 				  {% if messages %}
 				    <ul class=flashes>
+				    <!-- counts every category and message in message variable !-->
 				    {% for category, message in messages %}
+				    <!-- takes a category as a class, in order to use css to change, i.e(red=error, green=correct, warning=yellow)!-->
 				      <li class="{{ category }}">{{ message }}</li>
 				    {% endfor %}
 				    </ul>
